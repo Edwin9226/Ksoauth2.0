@@ -15,7 +15,7 @@ public class WebSecurityConfig {
             "/hello",
             "/register",
             "/verifyRegistration",
-            "resendVerifyToken"
+            "/resendVerifyToken"
     };
 
     @Bean
@@ -23,8 +23,8 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder(11);
     }
 
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+
+     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .cors()
                 .and()
